@@ -31,3 +31,4 @@ build/
 .vscode/
 out/artifacts/SpringREST_jar/SpringREST.jar
 springrest-export.tar
+/bin/

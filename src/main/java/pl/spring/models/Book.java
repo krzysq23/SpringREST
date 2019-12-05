@@ -16,8 +16,10 @@ public class Book {
     private String title;
     private String author;
     private String isbn;
+    private String imageSrc;
+    private double price;
     @DBRef
-    private Publisher publisher;
+    private Publisher publisher = new Publisher();
 
     public Book(String title, String author, String isbn) {
         this.title = title;

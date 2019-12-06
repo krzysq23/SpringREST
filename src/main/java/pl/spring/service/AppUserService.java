@@ -22,7 +22,7 @@ public class AppUserService implements UserDetailsService {
     @Autowired
     private AppUserRepository appUserRepository;
 
-    @Transactional(readOnly = true)
+    //@Transactional(readOnly = true)
     @Override
     public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
         AppUser user = appUserRepository.findByLogin(login);

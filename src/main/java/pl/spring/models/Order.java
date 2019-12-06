@@ -30,6 +30,7 @@ public class Order {
     private String email;
     private Date dateCreated;
     private String status;
+    private double amount;
     @DBRef
     private List<OrderPosition> positions = new ArrayList<OrderPosition>();
     

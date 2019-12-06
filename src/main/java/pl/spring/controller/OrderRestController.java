@@ -55,6 +55,7 @@ public class OrderRestController {
         	String payment = obj.getString("payment"), delivery = obj.getString("delivery"), 
         			adress = obj.getString("adress"), phone = obj.getString("phone"), 
         					email = obj.getString("email"), login = obj.getString("login");
+        	double amount = obj.getDouble("amount");
         	
 
         	List<OrderPosition> positions = new ArrayList<OrderPosition>();
@@ -68,7 +69,7 @@ public class OrderRestController {
         	}
         	
         	Order order = new Order(null, login, payment, delivery, adress, phone, email, 
-        			new Date(), StatusOrderEnum.OCZEKUJACY_NA_PLATNOSC.toString(), positions );
+        			new Date(), StatusOrderEnum.OCZEKUJACY_NA_PLATNOSC.toString(), amount, positions );
         	
         	orderService.saveOrder(order);
         	

@@ -81,4 +81,20 @@ public class OrderRestController {
     }
 
 
+    @PostMapping(path = "/payForOrder", consumes = "application/json", produces = "application/json")
+    public ResponseEntity<String> payForOrder(@RequestBody String json) {
+    	
+        try {
+        	JSONObject obj = new JSONObject(json);
+        	String orderId = obj.getString("orderId");
+        	
+        	orderService.updateStatus(orderId, StatusOrderEnum.ZREALIZOWANY.toString());
+        	
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return ResponseEntity.ok("Status zamówienia został zmieniony");
+    }
+    
 }
